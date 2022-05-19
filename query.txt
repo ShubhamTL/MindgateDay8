@@ -1,0 +1,36 @@
+DROP TABLE employee_details;
+
+CREATE TABLE employee_details(
+employee_id NUMBER(10) GENERATED AS IDENTITY,
+name VARCHAR(50),
+salary NUMBER(10,2)
+);
+
+INSERT INTO employee_details(name, salary)
+VALUES('Vivek Gohil',1000);
+
+INSERT INTO employee_details(name, salary)
+VALUES('Rohit Thakur',2000);
+
+INSERT INTO employee_details(name, salary)
+VALUES('Munna Tripathi',1000);
+
+commit;
+
+SELECT * FROM employee_details;
+
+
+UPDATE employee_details 
+SET salary=40000
+WHERE employee_id=2;
+
+UPDATE employee_details 
+SET name='Sachin Tendulkar' , salary=20000 
+WHERE employee_id=2;
+
+
+DELETE employee_details
+WHERE employee_id =1;
+
+SELECT * FROM employee_details
+WHERE employee_id =2;
